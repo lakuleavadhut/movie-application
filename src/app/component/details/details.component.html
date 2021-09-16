@@ -1,0 +1,23 @@
+<div class="details">
+    <div class="movie-banner" *ngIf = "movieDetail[0].poster">
+        <img src = "{{movieDetail[0].poster}}"
+            class="movie-banner-img"
+            alt="background image">
+    </div>
+        <div class="movie-content">
+            <div class="details-wrapper">
+                <div class="movie-header">
+                    <h3 class="movie-header-title"> {{movieDetail[0].title}}  <span class="movie-header-imdb-rating">(imdb-Rating : {{movieDetail[0].imdb_rating}})</span> </h3>
+                    <p class="movie-header-generes">
+                       <span>{{movieDetail[0].released_on | date: 'y'}} | {{movieDetail[0].length}} | {{movieDetail[0].director}}</span>
+                    </p>
+                    <p class="movie-header-cast">
+                       Caste : <span class = "movie-header-cast-casteName" *ngFor = "let caste of movieDetail[0].cast">{{caste}},</span> 
+                    </p>
+                    <p class="movie-header-description">
+                       {{movieDetail[0].overview}}
+                    </p>
+                </div>
+            </div>
+        </div>
+</div>
